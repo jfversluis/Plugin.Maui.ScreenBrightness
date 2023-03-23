@@ -1,10 +1,26 @@
-﻿namespace Plugin.Maui.ScreenBrightness;
+﻿using Windows.Graphics.Display;
 
-partial class ScreenBrightness : IScreenBrightness
+namespace Plugin.Maui.ScreenBrightness;
+
+// TODO Not working, throwing exception???
+partial class ScreenBrightnessImplementation : IScreenBrightness
 {
-	public double DesiredBrightness
+	public float Brightness 
 	{
-		get => 0;
-		set { }
+		get
+		{
+			if (!BrightnessOverride.GetDefaultForSystem().IsSupported)
+			{
+				return 0;
+			}
+
+			return (float)BrightnessOverride.GetDefaultForSystem().BrightnessLevel;
+		}
+		
+		set
+		{
+			BrightnessOverride.GetDefaultForSystem().StartOverride();
+			BrightnessOverride.GetDefaultForSystem().SetBrightnessLevel(value, DisplayBrightnessOverrideOptions.UseDimmedPolicyWhenBatteryIsLow);
+		}
 	}
 }
