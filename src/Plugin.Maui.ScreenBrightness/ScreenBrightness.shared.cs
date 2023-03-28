@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.ApplicationModel;
-
-namespace Plugin.Maui.ScreenBrightness;
+﻿namespace Plugin.Maui.ScreenBrightness;
 
 public static class ScreenBrightness
 {
