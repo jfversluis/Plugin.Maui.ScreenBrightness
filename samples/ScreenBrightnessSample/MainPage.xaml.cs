@@ -17,5 +17,6 @@ public partial class MainPage : ContentPage
 	void Slider_ValueChanged(System.Object sender, Microsoft.Maui.Controls.ValueChangedEventArgs e)
 	{
 		_screenBrightness.Brightness = (float)e.NewValue;
+		brightnessLabel.Text = $"Current Brightness: {Math.Round(_screenBrightness.Brightness, 2)}";
 	}
 }

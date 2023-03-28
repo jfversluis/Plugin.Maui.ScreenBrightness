@@ -4,5 +4,11 @@
              x:Class="ScreenBrightnessSample.MainPage"
              Title="Screen Brightness Plugin">
 
-    <Slider x:Name="brightnessSlider" ValueChanged="Slider_ValueChanged" />
+    <VerticalStackLayout
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand"
+        Padding="30,0">
+            <Label x:Name="brightnessLabel" />
+            <Slider x:Name="brightnessSlider" ValueChanged="Slider_ValueChanged" />
+    </VerticalStackLayout>
 </ContentPage>
