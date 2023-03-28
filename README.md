@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-* Available on NuGet: <http://www.nuget.org/packages/Plugin.Maui.ScreenBrightness> [![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.Audio.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.ScreenBrightness/)
+* Available on NuGet: <http://www.nuget.org/packages/Plugin.Maui.ScreenBrightness> [![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.ScreenBrightness.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.ScreenBrightness/)
 
 ## API Usage
 
