@@ -10,13 +10,22 @@ partial class ScreenBrightnessImplementation : IScreenBrightness
 	{
 		get
 		{
-			if (Platform.CurrentActivity is null)
-			{
+			var activity = Platform.CurrentActivity;
+			if (activity is null) {
 				return 0;
 			}
 
-			return Settings.System.GetInt(Platform.CurrentActivity.ContentResolver,
-				Settings.System.ScreenBrightness);
+			var window = activity.Window;
+			if (window is null) {
+				return 0;
+			}
+			
+			var windowBrightness = window.Attributes?.ScreenBrightness ?? 0;
+			if (windowBrightness < 0) {
+				return Settings.System.GetInt(activity.ContentResolver, Settings.System.ScreenBrightness) / 255f;
+			}
+
+			return windowBrightness;
 		}
 
 		set
