@@ -1,26 +1,38 @@
-﻿using Windows.Graphics.Display;
+﻿using System.Management;
 
 namespace Plugin.Maui.ScreenBrightness;
 
-// TODO Not working, throwing exception???
 partial class ScreenBrightnessImplementation : IScreenBrightness
 {
-	public float Brightness 
+	public float Brightness
 	{
 		get
 		{
-			if (!BrightnessOverride.GetDefaultForSystem().IsSupported)
+			byte num = 0;
+			using var managementObjectSearcher = new ManagementObjectSearcher(new ManagementScope("root\\WMI"), new SelectQuery("WmiMonitorBrightness"));
+			using var objectCollection = managementObjectSearcher.Get();
+			using var enumerator = objectCollection.GetEnumerator();
+			if (enumerator.MoveNext())
 			{
-				return 0;
+				num = (byte)enumerator.Current.GetPropertyValue("CurrentBrightness");
 			}
 
-			return (float)BrightnessOverride.GetDefaultForSystem().BrightnessLevel;
+			return num / 100.0f;
 		}
-		
+
 		set
 		{
-			BrightnessOverride.GetDefaultForSystem().StartOverride();
-			BrightnessOverride.GetDefaultForSystem().SetBrightnessLevel(value, DisplayBrightnessOverrideOptions.UseDimmedPolicyWhenBatteryIsLow);
+			using var managementObjectSearcher = new ManagementObjectSearcher(new ManagementScope("root\\WMI"), new SelectQuery("WmiMonitorBrightnessMethods"));
+			using var objectCollection = managementObjectSearcher.Get();
+			using var enumerator = objectCollection.GetEnumerator();
+			if (enumerator.MoveNext())
+			{
+				((ManagementObject)enumerator.Current).InvokeMethod("WmiSetBrightness", new object[]
+				{
+						uint.MaxValue,
+						value * 100
+				});
+			}
 		}
 	}
 }

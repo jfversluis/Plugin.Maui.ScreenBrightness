@@ -4,7 +4,7 @@ namespace ScreenBrightnessSample;
 
 public partial class MainPage : ContentPage
 {
-	IScreenBrightness _screenBrightness;
+	readonly IScreenBrightness _screenBrightness;
 
 	public MainPage(IScreenBrightness screenBrightness)
 	{
