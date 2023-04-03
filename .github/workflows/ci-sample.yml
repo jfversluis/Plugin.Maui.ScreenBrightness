@@ -21,7 +21,5 @@ jobs:
         dotnet-version: 6.0.x
     - name: Install .NET MAUI
       run: dotnet workload install maui
-    - name: Restore dependencies
-      run: dotnet restore samples\ScreenBrightnessSample.sln
     - name: Build
-      run: dotnet build samples\ScreenBrightnessSample.sln -c Release
+      run: msbuild samples\ScreenBrightnessSample.sln -c Release
