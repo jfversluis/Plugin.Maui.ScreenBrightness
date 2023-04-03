@@ -19,9 +19,9 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
     - name: Install .NET MAUI
       run: dotnet workload install maui
-    - name: Restore dependencies
-      run: dotnet restore samples\ScreenBrightnessSample.sln
     - name: Build
-      run: dotnet build samples\ScreenBrightnessSample.sln -c Release
+      run: msbuild samples\ScreenBrightnessSample.sln -r -property:Configuration=Release
