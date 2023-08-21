@@ -1,10 +1,16 @@
+![](nuget.png) 
+
 # Plugin.Maui.ScreenBrightness
 
 `Plugin.Maui.ScreenBrightness` provides the ability to get or set the screen brightness inside a .NET MAUI application.
 
-## Getting Started
+## Install Plugin
 
-* Available on NuGet: <http://www.nuget.org/packages/Plugin.Maui.ScreenBrightness> [![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.ScreenBrightness.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.ScreenBrightness/)
+[![NuGet](https://img.shields.io/nuget/v/Plugin.Maui.ScreenBrightness.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.Maui.ScreenBrightness/)
+
+Available on [NuGet](http://www.nuget.org/packages/Plugin.Maui.ScreenBrightness).
+
+Install with the dotnet CLI: `dotnet add package Plugin.Maui.Pedometer`, or through the NuGet Package Manager in Visual Studio.
 
 ## API Usage
 
