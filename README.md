@@ -10,7 +10,7 @@
 
 Available on [NuGet](http://www.nuget.org/packages/Plugin.Maui.ScreenBrightness).
 
-Install with the dotnet CLI: `dotnet add package Plugin.Maui.Pedometer`, or through the NuGet Package Manager in Visual Studio.
+Install with the dotnet CLI: `dotnet add package Plugin.Maui.ScreenBrightness`, or through the NuGet Package Manager in Visual Studio.
 
 ## API Usage
 
