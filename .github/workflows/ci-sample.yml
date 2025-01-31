@@ -20,4 +20,4 @@ jobs:
       run: dotnet restore samples\ScreenBrightnessSample\ScreenBrightnessSample.csproj
       
     - name: Build
-      run: dotnet build samples\ScreenBrightnessSample\ScreenBrightnessSample -c Release
+      run: dotnet build samples\ScreenBrightnessSample\ScreenBrightnessSample.csproj -c Release
