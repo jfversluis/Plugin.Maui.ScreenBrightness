@@ -41,7 +41,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.30" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 	  <ProjectReference Include="..\..\src\Plugin.Maui.ScreenBrightness\Plugin.Maui.ScreenBrightness.csproj" />
 	</ItemGroup>
 </Project>
