@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using UIKit;
 
 namespace Plugin.Maui.ScreenBrightness;
 
