@@ -14,7 +14,7 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 
 		<RuntimeIdentifiers Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">win-x64;win-x86;</RuntimeIdentifiers>
-
+		<EnableMsixTooling Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">true</EnableMsixTooling>
 		<!-- NuGet -->
 		<Authors>jfversluis</Authors>
 		<Copyright>Copyright © jfversluis and contributors</Copyright>
@@ -71,7 +71,6 @@
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" IsImplicitlyDefined="true" />
 		<PackageReference Include="System.Management" Version="9.0.1" Condition="$(TargetFramework.Contains('-windows')) == true" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250108002" Condition="$(TargetFramework.Contains('-windows')) == true" />
 	</ItemGroup>
 
 	<!-- Package additions -->
