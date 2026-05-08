@@ -1,16 +1,17 @@
-# $ Copilot InstructionsREPO 
+# Plugin.Maui.ScreenBrightness - Copilot Instructions
 
 ## Project Overview
 
-This is a .NET MAUI plugin that provides the ability to get and set the device screen brightness. It targets Android, iOS, Windows.
+This is a .NET MAUI plugin that provides the ability to get and set the device screen brightness. It targets Android, iOS, and Windows.
 
-### Architecture
+## Architecture
 
-Minimal API: `IScreenBrightness` with single property `float Brightness { get; set; }` (0.0-1.0).
+Minimal API: `IScreenBrightness` with a single property `float Brightness { get; set; }` (0.0-1.0).
 
-- Android: per-window brightness via WindowManager
-- iOS: system-wide via UIScreen
-- Windows: BrightnessOverride API
+Platform specifics:
+- Android: Per-window brightness via `WindowManager`
+- iOS: System-wide via `UIScreen`
+- Windows: `BrightnessOverride` API
 
 ## Code Conventions
 
@@ -18,11 +19,11 @@ Minimal API: `IScreenBrightness` with single property `float Brightness { get; s
 All code uses: `Plugin.Maui.ScreenBrightness`
 
 ### File Naming
-- `*.shared. Cross-platform codecs` 
-- `*.android. Androidcs` 
-- `*.macios. iOS/macOScs` 
-- `*.windows. Windowscs` 
-- `*.net. Generic .NET fallbackcs` 
+- `*.shared.cs` - Cross-platform code
+- `*.android.cs` - Android-specific code
+- `*.macios.cs` - iOS/macOS-specific code
+- `*.windows.cs` - Windows-specific code
+- `*.net.cs` - Generic .NET fallback
 
 ### Standards
 - File-scoped namespaces
